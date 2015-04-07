@@ -59,5 +59,5 @@ angular.module('starterApp.controllers', ['starterApp.services'])
 })
 
 .controller('ChatCtrl', function($scope){
-    
-})
+
+});

@@ -46,7 +46,7 @@ angular.module('starterApp', ['ui.router', 'ui.bootstrap', 'smoothScroll', 'star
                 }
             }
         })
-        
+
         // Home
         .state('root.home', {
             url: '/',
@@ -89,7 +89,7 @@ angular.module('starterApp', ['ui.router', 'ui.bootstrap', 'smoothScroll', 'star
                     controller: 'ProjectDetailCtrl'
                 }
             }
-        })
+        });
     }
   ]
 )
@@ -97,7 +97,7 @@ angular.module('starterApp', ['ui.router', 'ui.bootstrap', 'smoothScroll', 'star
 .directive('weatherBar', function($http){
     return {
         restrict: 'E',
-        template: '<div id="weatherBar">' + 
+        template: '<div id="weatherBar">' +
                     '<table class="table table-bordered">' +
                       '<tbody>' +
                         '<tr id="dates"><th ng-repeat="date in dates">{{date[0]}}</br><span class="date">{{date[1]}}</span></th></tr>' +
@@ -171,5 +171,5 @@ angular.module('starterApp', ['ui.router', 'ui.bootstrap', 'smoothScroll', 'star
 
           });
         }
-    }
-})
+    };
+});

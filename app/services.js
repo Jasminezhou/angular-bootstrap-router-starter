@@ -5,25 +5,25 @@ angular.module('starterApp.services', [])
         scrollTop: function(){
             smoothScroll(document.getElementById('top'), {offset: 50});
         }
-    }
+    };
 })
 
 .factory('SiteContent', function(){
     var slides = [
       {
-        image: '/static/img/projects/Helios_projects_Liquid Urethane Membrane6.jpg',
-        title: 'Protect your home is our top priority',
-        detail: 'We are roofing contractor who is offer a total roofing, reroofing, waterproofing and repair service on all roof system. Our residential services protect you home, from Top down. '
+        image: 'http://lorempixel.com/1140/570/',
+        title: 'hello world!',
+        detail: '"Good judgment comes from experience, and often experience comes from bad judgment." Rita Mae Brown, b. 1944, American writer'
       },
       {
-        image: '/static/img/projects/Helios_projects_shigle1_7.jpg',
-        title: 'Great service is our Goal',
-        detail: 'When you work with our Expert Roofers, Helios committed to finding the best roofing solution for your needs.'
+        image: 'http://lorempixel.com/1140/570/',
+        title: 'hello world!',
+        detail: 'Wherever you go, go with all your heart.'
       },
       {
-        image: '/static/img/projects/Helios_projects_BridgeportRoadRichmond1.jpg',
-        title: 'Commercial Roofing, In time and On time',
-        detail: 'Protecting your investment is what we concern. Our commercial roofing experts let you focus on your daily operation. Let us taking care of your "Top headache".'
+        image: 'http://lorempixel.com/1140/570/',
+        title: 'hello world!',
+        detail: 'Questions are the creative acts of intelligence.'
       },
     ];
     var services = [
@@ -38,14 +38,19 @@ angular.module('starterApp.services', [])
     ];
 
     var servicesMap = {
-      touchOn: {
-        name: 'Touch-On Roofing', 
-        detail: 'this is a great service of Touch-On Roofing...',
-        icon: '/static/img/services/Torch-On_Roofing.png',
-        img: '/static/img/services/Torch-On%20Roofing.jpg'
+      service1: {
+        name: 'Service 1',
+        detail: 'this is a great service...',
+        icon: 'http://lorempixel.com/100/100',
+        img: 'http://lorempixel.com/200/200'
 
       },
-      service2: {name: 'Service 2', detail: 'this is a great service 2...'},
+      service2: {
+        name: 'Service 2',
+        detail: 'this is a great service 2...',
+        icon: 'http://lorempixel.com/100/100',
+        img: 'http://lorempixel.com/200/200'
+      },
     };
 
     var projectsMap = {
@@ -101,10 +106,11 @@ angular.module('starterApp.services', [])
             'img5': '/static/img/projects/Helios_projects_BridgeportRoadRichmond7.jpg',
             'img6': '/static/img/projects/Helios_projects_BridgeportRoadRichmond1.jpg',
         },
-    }
+    };
     return {
         slides: slides,
-        serviceDetail: function(serviceId){return servicesMap[serviceId]},
+        services: services,
+        serviceDetail: function(serviceId){return servicesMap[serviceId];},
         projectSummary: ['liquid', 'shingle', 'insulation', 'richmond'].map(function(projectId){
           var summary = projectsMap[projectId];
           summary.projectId = projectId;
@@ -115,7 +121,7 @@ angular.module('starterApp.services', [])
           summary.projectId = projectId;
           return summary;
         }),
-        projectDetail: function(projectId){return projectsMap[projectId]}
-    }
-})
+        projectDetail: function(projectId){return projectsMap[projectId];}
+    };
+});
 
